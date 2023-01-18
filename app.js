@@ -5,23 +5,19 @@ const app = express();
 app.set('view engine', 'hbs');
 app.set('views', `${__dirname}/views`);
 
-app.use(express.static(`${__dirname}/assets`));
+app.use(express.static(`${__dirname}/public`));
 
 app.get('/', (req, res, start) => {
-    const name = `Paloma`;
-    res.render('home', { name: name });
+    res.render('home');
 });
 app.get('/about', (req, res, next) => {
-    const name = 'Paloma';
-    res.render('about', { name: name });
+    res.render('about');
 });
 app.get('/work', (req, res, next) => {
-    const name = 'Paloma';
-    res.render('work', { name: name });
+    res.render('work');
 });
 app.get('/gallery', (req, res, next) => {
-    const name = 'Paloma';
-    res.render('gallery', { name: name });
+    res.render('gallery');
 });
 
 const port = 3000;
